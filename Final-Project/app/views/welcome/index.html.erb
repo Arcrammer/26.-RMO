@@ -1,4 +1,13 @@
-<%
-  content_for(:title, 'Home')
-  content_for(:needs_jquery, true)
-%>
+<% content_for(:title, 'Home') %>
+
+<div class="poster-bar">
+  <div class="poster">
+    <%= image_tag('video_posters/1.jpg', {:alt => '1.jpg'}) %>
+  </div> <!-- .poster -->
+  <div class="poster">
+    <%= image_tag('video_posters/2.jpg', {:alt => '2.jpg'}) %>
+  </div> <!-- .poster -->
+  <div class="poster">
+    <%= image_tag('video_posters/3.jpg', {:alt => '3.jpg'}) %>
+  </div> <!-- .poster -->
+</div> <!-- .poster-bar -->

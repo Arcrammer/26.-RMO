@@ -9,13 +9,15 @@
 
     <!-- Scripts -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= (yield(:needs_jquery)) ? javascript_include_tag('jquery.min.js') : '' %>
+    <%= (true) ? javascript_include_tag('jquery.min.js') : '' %>
     <%= yield(:extra_scripts) %>
 
     <!-- CSRF Tags -->
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

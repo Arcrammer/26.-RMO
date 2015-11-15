@@ -1,3 +1,22 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.poster-bar {
+  padding: 15px 0;
+  overflow: auto;
+  width: 1024px;
+}
+
+.poster-bar .poster:first-of-type {
+  margin-left: 61.438px;
+}
+
+.poster-bar .poster img {
+  border: 2.5px solid white;
+  cursor: pointer;
+  float: left;
+  margin: 20px;
+  height: 150px;
+  width: 257.333333px;
+}

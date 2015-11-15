@@ -1,0 +1,22 @@
+{
+  "name": "Final-Project",
+  "homepage": "https://github.com/Arcrammer/26.-RMO",
+  "authors": [
+    "Alexander Rhett Crammer <alexander2475914@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "mediaelement": "~2.18.2"
+  }
+}

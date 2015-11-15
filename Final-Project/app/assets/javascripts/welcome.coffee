@@ -6,7 +6,6 @@
   $ ->
     # The DOM has loaded and jQuery is ready
       $(".poster img").click ->
-        console.log "Click!"
 
     null
 ) jQuery

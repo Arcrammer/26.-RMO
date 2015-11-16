@@ -5,3 +5,23 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Video.create(
+  name: '1',
+  resolution: '1920 x 1080',
+  fps: '25',
+  filename: '1.' # The extension will be determined in the controller
+)
+
+Video.create(
+  name: '2',
+  resolution: '1920 x 1080',
+  fps: '30',
+  filename: '2.' # The extension will be determined in the controller
+)
+
+Video.create(
+  name: '3',
+  resolution: '1920 x 1080',
+  fps: '25',
+  filename: '3.' # The extension will be determined in the controller
+)

@@ -21,14 +21,15 @@
   content_tag :video,
     :controls => 'controls',
     :width => 500,
+    :preload => 'auto',
     :height => 275 do
       source_tags = tag :source, {
-        'type' => 'video/ogg',
-        'src' => asset_url("#{@desired_video}.ogv")
-      }
-      source_tags += tag :source, {
         'type' => 'video/mp4',
         'src' => asset_url("#{@desired_video}.mp4")
+      }
+      source_tags += tag :source, {
+        'type' => 'video/ogg',
+        'src' => asset_url("#{@desired_video}.ogv")
       }
       source_tags += tag :source, {
         'type' => 'video/webm',
@@ -52,3 +53,45 @@
       source_tags
     end
 %>
+<p>Want a copy?</p>
+<div class="download-panels">
+  <div class="panel">
+    <ul>
+      <li>
+        First, choose a format.
+      </li>
+      <li>
+        Option
+      </li>
+      <li>
+        Option
+      </li>
+    </ul>
+  </div> <!-- .panel -->
+  <div class="panel">
+    <ul>
+      <li>
+        Then choose a resolution.
+      </li>
+      <li>
+        Option
+      </li>
+      <li>
+        Option
+      </li>
+    </ul>
+  </div> <!-- .panel -->
+  <div class="panel">
+    <ul>
+      <li>
+        Download it!
+      </li>
+      <li>
+        Option
+      </li>
+      <li>
+        Option
+      </li>
+    </ul>
+  </div> <!-- .panel -->
+</div> <!-- .downloads -->

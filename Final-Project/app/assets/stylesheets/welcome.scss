@@ -3,8 +3,21 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // Variables
+$light-gray: #d8d6d6;
 $gray: #252525;
 $player-height: 600px;
+
+// Content
+p {
+  color: white;
+  font: {
+    family: "Freight";
+    size: 2.75em;
+  }
+  margin: 35px auto;
+  padding: 15px 0;
+  text-align: center;
+}
 
 // Poster Bar
 .poster-bar {
@@ -34,4 +47,55 @@ $player-height: 600px;
 .mejs-container, .mejs-container video, .mejs-overlay {
   height: $player-height !important;
   width: 100% !important;
+}
+
+// Download Panels
+.download-panels {
+  margin: 50px auto;
+}
+
+.panel {
+  background-color: #a5a5a5;
+  float: left;
+  margin: 0 20px;
+  width: 301.333333px;
+}
+
+.panel ul {
+  color: #282727;
+}
+
+.panel li:first-of-type {
+  color: #ebebeb;
+  font: {
+    family: "Freight Condensed";
+    size: 1.75em;
+  }
+  letter-spacing: 0.75px;
+  padding: 15px 25px;
+}
+
+.panel li:not(:first-of-type) {
+  background-color: $light-gray;
+}
+
+// Fonts
+@font-face {
+  font-family: "Freight";
+  src: url('Freight/freight.eot');
+  src: url('Freight/freight.eot?#iefix') format('embedded-opentype'),
+       url('Freight/freight.woff2') format('woff2'),
+       url('Freight/freight.woff') format('woff'),
+       url('Freight/freight.ttf') format('truetype'),
+       url('Freight/freight.svg') format('svg');
+}
+
+@font-face {
+  font-family: "Freight Condensed";
+  src: url('FreightCondensed/freight.eot');
+  src: url('FreightCondensed/freight_condensed.eot?#iefix') format('embedded-opentype'),
+       url('FreightCondensed/freight_condensed.woff2') format('woff2'),
+       url('FreightCondensed/freight_condensed.woff') format('woff'),
+       url('FreightCondensed/freight_condensed.ttf') format('truetype'),
+       url('FreightCondensed/freight_condensed.svg') format('svg');
 }

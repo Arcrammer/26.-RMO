@@ -5,7 +5,14 @@
 (($) ->
   $ ->
     # The DOM has loaded and jQuery is ready
-      $(".poster img").click ->
+    $('video').mediaelementplayer {
+        'success': (mediaElement, originalNode) ->
+          # The media player has been instantiated
+
+          null
+    }
+
+    # $(".poster img").click ->
 
     null
 ) jQuery

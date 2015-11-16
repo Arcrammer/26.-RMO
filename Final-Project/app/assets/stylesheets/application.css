@@ -12,8 +12,9 @@
  *
  * ^ Actually I just reversed this so it's backwards. Other
  * stylesheets will take precedence over this stylesheet.
- * 
+ *
  *= require_self
+ *= require mediaelement
  *= require_tree .
  */
 

@@ -11,6 +11,34 @@
     <%= image_tag('video_posters/3.jpg', {:alt => '3.jpg'}) %>
   </div> <!-- .poster -->
 </div> <!-- .poster-bar -->
-<video>
-
-</video>
+<%=
+  content_tag :video,
+    :controls => 'controls',
+    :width => 500,
+    :height => 275 do
+      source_tags = tag :source, {
+        'type' => 'video/ogg',
+        'src' => asset_url('3/3.ogv')
+      }
+      source_tags += tag :source, {
+        'type' => 'video/mp4',
+        'src' => asset_url('3/3.mp4')
+      }
+      source_tags += content_tag 'object', {
+        :type => 'application/x-shockwave-flash',
+        :data => 'flashmediaelement.swf'
+      } do
+        param_tags = tag :param, {
+          :name => 'movie',
+          :value => 'flashmediaelement.swf'
+        }
+        param_tags += tag :param, {
+          :name => 'flashvars',
+          :value => 'controls=true&amp;poster=myvideo.jpg&amp;file=myvideo.mp4'
+        }
+        param_tags += image_tag('video_posters/1', :alt => '1.jpg')
+        param_tags
+      end
+      source_tags
+    end
+%>

@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Variables
+$gray: #252525;
+$player-height: 600px;
+
+// Poster Bar
 .poster-bar {
   padding: 15px 0;
   overflow: auto;
@@ -21,6 +26,12 @@
   width: 257.333333px;
 }
 
-video, .mejs-video {
+// MediaElement
+.mejs-container {
+  background-color: $gray;
+}
+
+.mejs-container, .mejs-container video, .mejs-overlay {
+  height: $player-height !important;
   width: 100% !important;
 }

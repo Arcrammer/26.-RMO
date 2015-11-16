@@ -3,9 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // Variables
+$white: #ebebeb;
 $gray: #252525;
 $light-gray: #d8d6d6;
-$white: #ebebeb;
 $player-height: 600px;
 $helvetica-stack: "Helvetica Neue", "Helvetica", sans-serif;
 
@@ -96,6 +96,15 @@ p {
   margin-bottom: 15px;
 }
 
+.panel li:last-of-type p {
+  color: $gray;
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  bottom: 150px;
+}
+
 .panel img {
   display: block;
   margin: auto;
@@ -110,10 +119,12 @@ p {
   color: #282727;
   cursor: pointer;
   display: block;
+  letter-spacing: 0.5px;
   padding: 25px 35px;
   margin: 10px 0;
   text-decoration: none;
   transition: background-color 125ms;
+
   // These shouldn't be highlightable
    user-select: none;
    -o-user-select:none;

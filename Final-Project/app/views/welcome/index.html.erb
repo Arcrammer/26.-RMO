@@ -7,9 +7,10 @@
 # only available within views, apparently.)
 javascript_tag() do %>
   var downloadLinks = {
-    'mp4': '<%= asset_url("#{@desired_video.filename}.mp4") %>',
-    'ogv': '<%= asset_url("#{@desired_video.filename}.ogv") %>',
-    'webm': '<%= asset_url("#{@desired_video.filename}.webm") %>',
+    "mp4": "<%= asset_url("#{@desired_video.filename}.mp4") %>",
+    "ogv": "<%= asset_url("#{@desired_video.filename}.ogv") %>",
+    "webm": "<%= asset_url("#{@desired_video.filename}.webm") %>",
+    "m4v": "<%= asset_url("#{@desired_video.filename}.m4v") %>"
   };
 <% end %>
 
@@ -48,6 +49,10 @@ javascript_tag() do %>
         'type' => 'video/webm',
         'src' => asset_url("#{@desired_video.filename}.webm")
       }
+      source_tags += tag :source, {
+        'type' => 'video/m4v',
+        'src' => asset_url("#{@desired_video.filename}.m4v")
+      }
       source_tags += content_tag 'object', {
         :type => 'application/x-shockwave-flash',
         :data => 'flashmediaelement.swf'
@@ -71,9 +76,10 @@ javascript_tag() do %>
   <div class="panel">
     <ul>
       <li>First, choose a format.</li>
-      <li><a id="mp4">MP4 (H.264, MPEG)</a></li>
+      <li><a id="mp4">MP4 (H.264, MPEG AAC)</a></li>
       <li><a id="ogv">OGG (Theora, Vorbis)</a></li>
       <li><a id="webm">WebM (VP9, Vorbis)</a></li>
+      <li><a id="m4v">M4V (H.264, MPEG AAC)</a></li>
     </ul>
   </div> <!-- .panel -->
   <div class="panel">
@@ -88,6 +94,7 @@ javascript_tag() do %>
       <li>
         <a id="download-link" href="<%= asset_url("#{@desired_video_links}") %>">
           <%= image_tag('DownloadIcon', alt: 'DownloadIcon') %>
+          <p>250MB</p>
         </a>
       </li>
     </ul>

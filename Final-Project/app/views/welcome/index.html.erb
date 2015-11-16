@@ -17,12 +17,19 @@
     :width => 500,
     :height => 275 do
       source_tags = tag :source, {
+        'id' => 'src-ogg',
         'type' => 'video/ogg',
         'src' => asset_url('2/2.ogv')
       }
       source_tags += tag :source, {
+        'id' => 'src-mp4',
         'type' => 'video/mp4',
         'src' => asset_url('2/2.mp4')
+      }
+      source_tags += tag :source, {
+        'id' => 'src-webm',
+        'type' => 'video/webm',
+        'src' => asset_url('2/2.webm')
       }
       source_tags += content_tag 'object', {
         :type => 'application/x-shockwave-flash',

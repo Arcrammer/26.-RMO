@@ -9,19 +9,19 @@ Video.create(
   name: '1',
   resolution: '1920 x 1080',
   fps: '25',
-  filename: '1.' # The extension will be determined in the controller
+  filename: '1' # No need for dots nor extensions here
 )
 
 Video.create(
   name: '2',
   resolution: '1920 x 1080',
   fps: '30',
-  filename: '2.' # The extension will be determined in the controller
+  filename: '2' # No need for dots nor extensions here
 )
 
 Video.create(
   name: '3',
   resolution: '1920 x 1080',
   fps: '25',
-  filename: '3.' # The extension will be determined in the controller
+  filename: '3' # No need for dots nor extensions here
 )

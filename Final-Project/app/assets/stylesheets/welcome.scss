@@ -5,12 +5,13 @@
 // Variables
 $gray: #252525;
 $light-gray: #d8d6d6;
+$white: #ebebeb;
 $player-height: 600px;
 $helvetica-stack: "Helvetica Neue", "Helvetica", sans-serif;
 
 // Content
 p {
-  color: white;
+  color: $white;
   font: {
     family: "Freight";
     size: 2.75em;
@@ -57,6 +58,7 @@ p {
 
 .panel {
   background-color: #a5a5a5;
+  border-radius: 2.5px;
   float: left;
   margin: 0 20px;
   width: 301.333333px;
@@ -90,6 +92,10 @@ p {
   }
 }
 
+.panel li:last-of-type {
+  margin-bottom: 15px;
+}
+
 .panel img {
   display: block;
   margin: auto;
@@ -116,8 +122,8 @@ p {
    -webkit-user-select: none;
 }
 
-.panel a:hover {
-  background-color: #eee;
+.panel a:hover, .panel a.chosen {
+  background-color: white;
   color: #111; // Doubt this contrast is noticable but still
 }
 

@@ -1,5 +1,18 @@
 <% content_for(:title, 'Home') %>
 
+<%=
+# Get the links for each of the different formats of video
+# (This is necessary because each video is fingerprinted.
+# This can't go in the controller because 'asset_url()' is
+# only available within views, apparently.)
+javascript_tag() do %>
+  var downloadLinks = {
+    'mp4': '<%= asset_url("#{@desired_video.filename}.mp4") %>',
+    'ogv': '<%= asset_url("#{@desired_video.filename}.ogv") %>',
+    'webm': '<%= asset_url("#{@desired_video.filename}.webm") %>',
+  };
+<% end %>
+
 <div class="poster-bar">
   <div class="poster">
     <a href="/video/1">
@@ -25,15 +38,15 @@
     :height => 275 do
       source_tags = tag :source, {
         'type' => 'video/mp4',
-        'src' => asset_url("#{@desired_video}.mp4")
+        'src' => asset_url("#{@desired_video.filename}.mp4")
       }
       source_tags += tag :source, {
         'type' => 'video/ogg',
-        'src' => asset_url("#{@desired_video}.ogv")
+        'src' => asset_url("#{@desired_video.filename}.ogv")
       }
       source_tags += tag :source, {
         'type' => 'video/webm',
-        'src' => asset_url("#{@desired_video}.webm")
+        'src' => asset_url("#{@desired_video.filename}.webm")
       }
       source_tags += content_tag 'object', {
         :type => 'application/x-shockwave-flash',
@@ -58,9 +71,9 @@
   <div class="panel">
     <ul>
       <li>First, choose a format.</li>
-      <li><a>MP4 (H.264, MPEG)</a></li>
-      <li><a>OGG (Theora, Vorbis)</a></li>
-      <li><a>WebM (VP9, Vorbis)</a></li>
+      <li><a id="mp4">MP4 (H.264, MPEG)</a></li>
+      <li><a id="ogv">OGG (Theora, Vorbis)</a></li>
+      <li><a id="webm">WebM (VP9, Vorbis)</a></li>
     </ul>
   </div> <!-- .panel -->
   <div class="panel">
@@ -73,7 +86,7 @@
     <ul>
       <li>Download it!</li>
       <li>
-        <a>
+        <a id="download-link" href="<%= asset_url("#{@desired_video_links}") %>">
           <%= image_tag('DownloadIcon', alt: 'DownloadIcon') %>
         </a>
       </li>

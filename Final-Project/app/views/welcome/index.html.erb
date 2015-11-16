@@ -10,7 +10,7 @@ javascript_tag() do %>
     "mp4": "<%= asset_url("#{@desired_video.filename}.mp4") %>",
     "ogv": "<%= asset_url("#{@desired_video.filename}.ogv") %>",
     "webm": "<%= asset_url("#{@desired_video.filename}.webm") %>",
-    "m4v": "<%= asset_url("#{@desired_video.filename}.m4v") %>"
+    "avi": "<%= asset_url("#{@desired_video.filename}.avi") %>"
   };
 <% end %>
 
@@ -50,8 +50,8 @@ javascript_tag() do %>
         'src' => asset_url("#{@desired_video.filename}.webm")
       }
       source_tags += tag :source, {
-        'type' => 'video/m4v',
-        'src' => asset_url("#{@desired_video.filename}.m4v")
+        'type' => 'video/avi',
+        'src' => asset_url("#{@desired_video.filename}.avi")
       }
       source_tags += content_tag 'object', {
         :type => 'application/x-shockwave-flash',
@@ -79,7 +79,7 @@ javascript_tag() do %>
       <li><a id="mp4">MP4 (H.264, MPEG AAC)</a></li>
       <li><a id="ogv">OGG (Theora, Vorbis)</a></li>
       <li><a id="webm">WebM (VP9, Vorbis)</a></li>
-      <li><a id="m4v">M4V (H.264, MPEG AAC)</a></li>
+      <li><a id="avi">AVI (H.264, MPEG AAC)</a></li>
     </ul>
   </div> <!-- .panel -->
   <div class="panel">

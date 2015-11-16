@@ -2,13 +2,19 @@
 
 <div class="poster-bar">
   <div class="poster">
-    <%= image_tag('video_posters/1.jpg', {:alt => '1.jpg'}) %>
+    <a href="/video/1">
+      <%= image_tag('video_posters/1.jpg', {:alt => '1.jpg'}) %>
+    </a>
   </div> <!-- .poster -->
   <div class="poster">
-    <%= image_tag('video_posters/2.jpg', {:alt => '2.jpg'}) %>
+    <a href="/video/2">
+      <%= image_tag('video_posters/2.jpg', {:alt => '2.jpg'}) %>
+    </a>
   </div> <!-- .poster -->
   <div class="poster">
-    <%= image_tag('video_posters/3.jpg', {:alt => '3.jpg'}) %>
+    <a href="/video/3">
+      <%= image_tag('video_posters/3.jpg', {:alt => '3.jpg'}) %>
+    </a>
   </div> <!-- .poster -->
 </div> <!-- .poster-bar -->
 <%=
@@ -17,19 +23,16 @@
     :width => 500,
     :height => 275 do
       source_tags = tag :source, {
-        'id' => 'src-ogg',
         'type' => 'video/ogg',
-        'src' => asset_url('2/2.ogv')
+        'src' => asset_url("#{@desired_video}.ogv")
       }
       source_tags += tag :source, {
-        'id' => 'src-mp4',
         'type' => 'video/mp4',
-        'src' => asset_url('2/2.mp4')
+        'src' => asset_url("#{@desired_video}.mp4")
       }
       source_tags += tag :source, {
-        'id' => 'src-webm',
         'type' => 'video/webm',
-        'src' => asset_url('2/2.webm')
+        'src' => asset_url("#{@desired_video}.webm")
       }
       source_tags += content_tag 'object', {
         :type => 'application/x-shockwave-flash',

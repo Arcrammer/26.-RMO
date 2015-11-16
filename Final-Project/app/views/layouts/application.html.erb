@@ -8,8 +8,8 @@
     <%= yield(:extra_stylesheets) %>
 
     <!-- Scripts -->
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= (true) ? javascript_include_tag('jquery.min.js') : '' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+    <%= (true) ? javascript_include_tag('jquery.min.js', 'data-turbolinks-track' => true) : '' %>
     <%= yield(:extra_scripts) %>
 
     <!-- CSRF Tags -->

@@ -1137,9 +1137,12 @@ p {
 .panel li:first-of-type {
   color: #ebebeb;
   font-family: "Freight Condensed";
+  font-size: 1.75em;
+  letter-spacing: 0.75px;
+  padding: 15px 25px;
 }
 
-/* line 75, /Users/alexander/Git/26.-RMO/Final-Project/app/assets/stylesheets/welcome.scss */
+/* line 78, /Users/alexander/Git/26.-RMO/Final-Project/app/assets/stylesheets/welcome.scss */
 .panel li:not(:first-of-type) {
   background-color: #d8d6d6;
 }
@@ -1152,5 +1155,5 @@ p {
 @font-face {
   font-family: "Freight Condensed";
   src: url("FreightCondensed/freight.eot");
-  src: url("Freight/freight.eot?#iefix") format("embedded-opentype"), url("Freight/freight.woff2") format("woff2"), url("Freight/freight.woff") format("woff"), url("Freight/freight.ttf") format("truetype"), url("Freight/freight.svg") format("svg");
+  src: url("FreightCondensed/freight_condensed.eot?#iefix") format("embedded-opentype"), url("FreightCondensed/freight_condensed.woff2") format("woff2"), url("FreightCondensed/freight_condensed.woff") format("woff"), url("FreightCondensed/freight_condensed.ttf") format("truetype"), url("FreightCondensed/freight_condensed.svg") format("svg");
 }

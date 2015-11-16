@@ -3,9 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // Variables
-$light-gray: #d8d6d6;
 $gray: #252525;
+$light-gray: #d8d6d6;
 $player-height: 600px;
+$helvetica-stack: "Helvetica Neue", "Helvetica", sans-serif;
 
 // Content
 p {
@@ -61,6 +62,11 @@ p {
   width: 301.333333px;
 }
 
+.inactive-panel * {
+  // Show the 'not-allowed' cursor on the element and its' children
+  cursor: not-allowed !important;
+}
+
 .panel ul {
   color: #282727;
 }
@@ -72,11 +78,52 @@ p {
     size: 1.75em;
   }
   letter-spacing: 0.75px;
+  margin-top: 5px;
   padding: 15px 25px;
 }
 
 .panel li:not(:first-of-type) {
+  display: block;
+  font: {
+    family: $helvetica-stack;
+    weight: 200;
+  }
+}
+
+.panel img {
+  display: block;
+  margin: auto;
+  margin-bottom: 15px;
+  padding: 150px 0;
+  width: 25%;
+}
+
+// Panel Links
+.panel a {
   background-color: $light-gray;
+  color: #282727;
+  cursor: pointer;
+  display: block;
+  padding: 25px 35px;
+  margin: 10px 0;
+  text-decoration: none;
+  transition: background-color 125ms;
+  // These shouldn't be highlightable
+   user-select: none;
+   -o-user-select:none;
+   -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+}
+
+.panel a:hover {
+  background-color: #eee;
+  color: #111; // Doubt this contrast is noticable but still
+}
+
+.panel a:active {
+  background-color: #B2AEAE;
+  color: black; // Again, doubt this contrast is noticable but still
 }
 
 // Fonts

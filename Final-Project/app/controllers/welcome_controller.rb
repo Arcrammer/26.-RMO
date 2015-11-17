@@ -13,14 +13,12 @@ class WelcomeController < ApplicationController
       @video_exists = false
     end
 
-    # @desired_video = (params.has_key?('id')) ? "#{params[:id]}/#{params[:id]}" : '1/1'
-
     render 'welcome/index'
   end
 
   def upload
     # The user has requested to download
     # a video, so we'll send it to them
-    send_data "videos/#{params[':video_id']}/params[':filename']"
+    send_file "videos/#{params[':video_id']}/params[':filename']"
   end
 end

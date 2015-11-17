@@ -12,7 +12,8 @@
       linkClicked = event.target
       desiredFormat = event.target.id
       downloadListButton = $('#download-link')[0]
-      downloadListButton.href = downloadLinks[desiredFormat]
+      downloadListButton.href = downloads[desiredFormat]['link']
+      $('#filesize-indication').text downloads[desiredFormat]['size']
 
     $('.panel a').click (event) ->
       # Remove the background colour for

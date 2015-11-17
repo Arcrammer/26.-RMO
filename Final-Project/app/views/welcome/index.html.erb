@@ -6,11 +6,23 @@
 # This can't go in the controller because 'asset_url()' is
 # only available within views, apparently.)
 javascript_tag() do %>
-  var downloadLinks = {
-    "mp4": "<%= asset_url("#{@desired_video.filename}.mp4") %>",
-    "ogv": "<%= asset_url("#{@desired_video.filename}.ogv") %>",
-    "webm": "<%= asset_url("#{@desired_video.filename}.webm") %>",
-    "avi": "<%= asset_url("#{@desired_video.filename}.avi") %>"
+  var downloads = {
+    "mp4": {
+      "link": "<%= asset_url("#{@desired_video.filename}.mp4") %>",
+      "size": "<%= '%.2f' % (File.size(Rails.root.join('app', 'assets', 'videos', "#{@desired_video.filename}.mp4")).to_f / 2**20) %> MB"
+    },
+    "ogv": {
+      "link": "<%= asset_url("#{@desired_video.filename}.ogv") %>",
+      "size": "<%= '%.2f' % (File.size(Rails.root.join('app', 'assets', 'videos', "#{@desired_video.filename}.ogv")).to_f / 2**20) %> MB"
+    },
+    "webm": {
+      "link": "<%= asset_url("#{@desired_video.filename}.webm") %>",
+      "size": "<%= '%.2f' % (File.size(Rails.root.join('app', 'assets', 'videos', "#{@desired_video.filename}.webm")).to_f / 2**20) %> MB"
+    },
+    "avi": {
+      "link": "<%= asset_url("#{@desired_video.filename}.avi") %>",
+      "size": "<%= '%.2f' % (File.size(Rails.root.join('app', 'assets', 'videos', "#{@desired_video.filename}.avi")).to_f / 2**20) %> MB"
+    }
   };
 <% end %>
 
@@ -94,7 +106,7 @@ javascript_tag() do %>
       <li>
         <a id="download-link" href="<%= asset_url("#{@desired_video_links}") %>">
           <%= image_tag('DownloadIcon', alt: 'DownloadIcon') %>
-          <p>250MB</p>
+          <p id="filesize-indication">« Size »</p>
         </a>
       </li>
     </ul>

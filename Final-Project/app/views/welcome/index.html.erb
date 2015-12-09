@@ -50,12 +50,12 @@ javascript_tag() do %>
     :preload => 'auto',
     :height => 275 do
       source_tags = tag :source, {
-        'type' => 'video/mp4',
-        'src' => asset_url("#{@desired_video.filename}.mp4")
-      }
-      source_tags += tag :source, {
         'type' => 'video/ogg',
         'src' => asset_url("#{@desired_video.filename}.ogv")
+      }
+      source_tags += tag :source, {
+        'type' => 'video/mp4',
+        'src' => asset_url("#{@desired_video.filename}.mp4")
       }
       source_tags += tag :source, {
         'type' => 'video/webm',
